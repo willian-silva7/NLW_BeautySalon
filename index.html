@@ -8,11 +8,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link
       rel="stylesheet"
+      href="https://unpkg.com/swiper@7/swiper-bundle.min.css"
+    />
+    <link
+      rel="stylesheet"
       type="text/css"
       media="screen"
       class="title"
       href="style.css"
     />
+
     <link rel="preconnect" class="title" href="https://fonts.googleapis.com" />
     <link
       rel="preconnect"
@@ -25,7 +30,6 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap"
       rel="stylesheet"
     />
-    <script src="main.js"></script>
   </head>
   <body>
     <header id="header">
@@ -138,15 +142,102 @@
         </div>
       </section>
 
+      <div class="divider-1"></div>
+
       <section class="section" id="testimonials">
-        <div></div>
+        <div class="container">
+          <header>
+            <h2 class="title">Depoimentos de quem já passou por aqui</h2>
+          </header>
+          <div class="testimonials swiper-container">
+            <div class="swiper-wrapper">
+              <div class="testimonial swiper-slide">
+                <blockquote>
+                  <p>
+                    <span>&ldquo;</span>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Laboriosam quidem fugiat eos odio exercitationem earum odit
+                    aspernatur laudantium officiis
+                  </p>
+                  <cite>
+                    <img
+                      src="https://randomuser.me/api/portraits/women/11.jpg"
+                      alt="woman"
+                    />
+                    Wanessa Souza
+                  </cite>
+                </blockquote>
+              </div>
+
+              <div class="testimonial swiper-slide">
+                <blockquote>
+                  <p>
+                    <span>&ldquo;</span>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Laboriosam quidem fugiat eos odio exercitationem earum odit
+                    aspernatur laudantium officiis
+                  </p>
+                  <cite>
+                    <img
+                      src="https://randomuser.me/api/portraits/men/94.jpg"
+                      alt="men"
+                    />
+                    Francileie Venega
+                  </cite>
+                </blockquote>
+              </div>
+
+              <div class="testimonial swiper-slide">
+                <blockquote>
+                  <p>
+                    <span>&ldquo;</span>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Laboriosam quidem fugiat eos odio exercitationem earum odit
+                    aspernatur laudantium officiis
+                  </p>
+                  <cite>
+                    <img
+                      src="https://randomuser.me/api/portraits/lego/6.jpg"
+                      alt="person"
+                    />
+                    Valesca Fabres
+                  </cite>
+                </blockquote>
+              </div>
+            </div>
+
+            <div class="swiper-pagination"></div>
+          </div>
+        </div>
       </section>
 
+      <div class="divider-2"></div>
+
       <section class="section" id="contact">
-        <div></div>
+        <div class="container grid">
+          <div class="text">
+            <h2 class="title">Entre em contato com a gente!</h2>
+            <p>
+              Entre em contato com a BeutySalon, queremos tirar suas dúvidas,
+              ouvir suas criticas e sugestões.
+            </p>
+            <a href="" class="button" target="_blank"
+              ><i class="icon-whatsapp"></i>Entrar em contato</a
+            >
+          </div>
+
+          <div class="links">
+            <ul class="grid">
+              <li><i class="icon-phone"></i>11 95274-0000</li>
+              <li><i class="icon-map-pin"></i>R. Veraz de Vasconciellos</li>
+              <li><i class="icon-mail"></i>contato@example.com</li>
+            </ul>
+          </div>
+        </div>
       </section>
     </main>
 
+    <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
     <script src="main.js"></script>
   </body>
 </html>
