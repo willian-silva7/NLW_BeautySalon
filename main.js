@@ -96,9 +96,6 @@ function activeMenuCurrentSection(){
     } 
 
   }
-
-  
-  
 }
 
 /* função scroll*/
