@@ -16,14 +16,11 @@ for(const link of links) {
 }
 
 // Alterar header da página quando houver scroll
-
-
+const header = document.querySelector("#header")
+const navHeight = header.offsetHeight
+const backToTopButton = document.querySelector('.back-to-top') 
 
 function ChangedHeaderWhenScroll(){
-  const header = document.querySelector("#header")
-  const navHeight = header.offsetHeight
-  const backToTopButton = document.querySelector('.back-to-top') 
-
   if(window.scrollY >= navHeight) {
     header.classList.add('scroll')
   } else {
@@ -37,7 +34,6 @@ function ChangedHeaderWhenScroll(){
   }
 }
 
-
 const Swipper = new Swiper('.swiper-container', {
   slidesPerView: 1,
   pagination: {
@@ -45,6 +41,12 @@ const Swipper = new Swiper('.swiper-container', {
   },
   mousewheel: true,
   keyboard: true,
+  breakpoints: {
+    767: {
+      slidesPerView: 2,
+      setWrapperSize: true
+    }
+  }
 })
 
 // Scroll Review
@@ -65,8 +67,6 @@ scrollReveal.reveal(`
 `, { interval: 100})
 
 // voltar para o topo
-
-
 // window.addEventListener('scroll', function() {
 //   if(window.scrollY >= 560) {
 //     backToTopButton.classList.add('show')
@@ -75,8 +75,36 @@ scrollReveal.reveal(`
 //   }
 // })
 
+const sections = document.querySelectorAll('main section[id]')
+function activeMenuCurrentSection(){
+  const checkpoint = window.pageYOffset + (window.innerHeight/8) *4
+
+  for( const section of sections){
+    const sectionTop = section.offsetTop
+    const sectionHeight = section.offsetHeight
+    const sectionId = section.getAttribute('id')
+
+    const checkpointStart = checkpoint >= sectionTop
+    const checkpointEnd = checkpoint <= sectionTop + sectionHeight
+
+    if (checkpointStart && checkpointEnd) {
+      document.querySelector('nav ul li a[href*=' + sectionId + ']')
+      .classList.add('active')
+    } else {
+      document.querySelector('nav ul li a[href*=' + sectionId + ']')
+      .classList.remove ('active')
+    } 
+
+  }
+
+  
+  
+}
+
+/* função scroll*/
 window.addEventListener('scroll', function() {
   ChangedHeaderWhenScroll()
+  activeMenuCurrentSection()
 })
 
 
